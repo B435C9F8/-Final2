@@ -1,0 +1,50 @@
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS實現簡單的幻燈片效果</title>
+    <style type="text/css">
+        img {
+            display: none;
+            width: 600px;
+            height: 600px;
+        }
+
+        input:checked + img {
+            display: block;
+        }
+
+        input {
+            position: absolute;
+            left: -9999px;
+        }
+
+        label {
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="cont">
+        <input id="img1" type="radio" checked="checked" name="img"  />
+        <img src="http://www.gdzp.org/uploadfile/2014/0905/20140905052820850.jpg" />
+        <input id="img2" type="radio" name="img">
+        <img src="http://image72.360doc.com/DownloadImg/2014/05/2605/42035151_6.jpg" />
+    </div>
+    <div id="nav">
+        <label for="img1">第一張</label>
+        <label for="img2">第二張</label>
+    </div>
+    
+    <!--相容性： IE8以及IE8以下的瀏覽器不相容，只顯示文字，不顯示圖片-->
+
+
+    <!--以上程式碼實現使用到的技術：
+        除了設定相應的CSS樣式，有兩點值得注意：
+            1.設定按鈕的位置(絕對定位) ，left:-9999px用來隱藏按鈕；
+            2.<label>標籤中的for屬性與input標籤中的id關聯，然後根據input的checked的狀態顯示或隱藏圖片，來達到顯示幻燈片效果的目的。
+    -->
+
+　　<script type="text/javascript" src="http://runjs.cn/gist/lgkdjey6/all"></script>
+</body>
+</html>
